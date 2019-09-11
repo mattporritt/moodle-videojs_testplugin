@@ -1,4 +1,3 @@
-<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -15,27 +14,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Class for provisioning AWS resources.
+ * Brightcove video rendering
  *
- * @package     local_smartmedia
- * @copyright   2018 Matt Porritt <mattp@catalyst-au.net>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-namespace videojs_testplugin;
-
-defined('MOODLE_INTERNAL') || die();
-
-/**
- * Class for provisioning AWS resources.
- *
- * @package     local_smartmedia
- * @copyright   2018 Matt Porritt <mattp@catalyst-au.net>
+ * @package    videojs_testplugin
+ * @copyright  2019 Matt Porritt <mattp@catalyst-au.net>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class testplugin {
+define(['videojs_testplugin'], function() {
 
-    public function get_plugin_module() : string {
-        return 'videojs_testplugin';
-    }
+    var Testplugin = {};
 
-}
+    Testplugin.init = function (){
+        window.console.log('I have been found');
+
+    };
+
+    return Testplugin;
+});
