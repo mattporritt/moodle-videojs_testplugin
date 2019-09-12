@@ -20,14 +20,17 @@
  * @copyright  2019 Matt Porritt <mattp@catalyst-au.net>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-define('testplugin', function() {
+define(function() {
 
     var Testplugin = {};
 
-    Testplugin.init = function (){
-        window.console.log('I have been found');
+    Testplugin.name = 'ExamplePlugin';
 
-    };
+    Testplugin.method = function (options) {
+        this.on('play', function(e) {
+            window.console.log('playback has started!');
+          });
+      };
 
     return Testplugin;
 });
