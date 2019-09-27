@@ -23,6 +23,7 @@
 define(['media_videojs/video-lazy'], function(videojs) {
 
     function testplugin (options) {
+        window.console.log(options);
         this.on('play', function(e) {
             window.console.log('playback has started!');
           });
