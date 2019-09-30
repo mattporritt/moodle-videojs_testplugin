@@ -15,36 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * VideoJS test plugin class.
+ * Settings file for plugin VideoJS test plugin.
  *
- * @package     videojs_testplugin
- * @copyright   2019 Matt Porritt <mattp@catalyst-au.net>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   videojs_testplugin
+ * @copyright 2019 Matt Porritt <mattp@catalyst-au.net>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-namespace videojs_testplugin;
 
 defined('MOODLE_INTERNAL') || die();
 
-/**
- * VideoJS test plugin class.
- *
- * @package     videojs_testplugin
- * @copyright   2019 Matt Porritt <mattp@catalyst-au.net>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class testplugin {
+$settings = new admin_settingpage('videojstestpluginsettings', new lang_string('pluginsettings', 'videojs_testplugin'));
 
-    /**
-     *
-     * @return \stdClass
-     */
-    public function get_plugin_config() : \stdClass {
-        $pluginconfig = get_config('videojs_testplugin', 'testsetting');
 
-        $config = new \stdClass();
-        $config->testsetting = $pluginconfig;
+if ($ADMIN->fulltree) {
 
-        return $config;
-    }
+    $settings->add(new admin_setting_configtext('videojs_testplugin/testsetting',
+            new lang_string('testsetting', 'videojs_testplugin'),
+            new lang_string('testsetting_desc', 'videojs_testplugin'),
+            'test value'));
 
 }
+
+$ADMIN->add('mediaplayervideojs', $settings);
+
+$settings = null;

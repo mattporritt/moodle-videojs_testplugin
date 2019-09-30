@@ -25,3 +25,6 @@
 $string['pluginname'] = 'Test Plugin';
 $string['privacy:metadata'] = 'This plugin does not store any personal data.';
 
+$string['pluginsettings'] = 'Test plugin settings';
+$string['testsetting'] = 'Test setting';
+$string['testsetting_desc'] = 'Test setting used in the plugin';
